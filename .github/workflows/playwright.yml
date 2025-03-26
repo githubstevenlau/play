@@ -4,6 +4,16 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  workflow_dispatch:
+    inputs:
+      browser:
+        type: choice
+        description: Which browser to test
+        required: true
+        options:
+          - chromium
+          - firefox
+
 jobs:
   test:
     timeout-minutes: 60
